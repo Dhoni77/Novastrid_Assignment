@@ -1,24 +1,24 @@
-# Novastrid_Assignment
-Node Js task for Novastrid
+<h1 align="center">⛩️ API Template ⛩️</h1>
+<img src="https://github.com/Kyuuari/Kyuuari/blob/main/Assets/railway.webp" width="100%" height="250px">
 
-# Installation
+## Introduction
+This is a small starter for restful api using express
 
-### Backend
+configured to use:
 
-#### Install dependencies
-```
-pnpm install
-```
-
-### Database
-
-create database named ```assignment``` in your local machine in mysql
+* Express
+* Vitest
+* Typescript
 
 
-### Run
 
-Start the application
+Template comes with example routes that can be deleted and modified anytime
 
-```
-pnpm run dev
-```
+
+## Features
+* Barebones 
+* Customizable
+* Test Ready
+  * Vitest for unit testing
+  * SuperTest for API endpoint testing
+* ESM Support
