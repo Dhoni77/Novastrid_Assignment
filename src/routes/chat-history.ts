@@ -1,7 +1,7 @@
 
 import express from 'express';
 const multer = require('multer');
-import { parseAndInsertChatHistory } from '../controllers/chat-history-controller';
+import { parseAndInsertChatHistory, filterTasks } from '../controllers/chat-history-controller';
 import { authenticate } from '../middlewares';
 const router = express.Router();
 
@@ -11,5 +11,6 @@ const upload = multer({ storage: storage });
 // Upload endpoint
 router.use('/', authenticate)
 router.post('/upload', upload.single('file'), parseAndInsertChatHistory);
+router.get('/filter', filterTasks);
 
 export default router;
