@@ -67,3 +67,18 @@ export async function parseAndInsertChatHistory(req: Request<any>, res: Response
         res.status(500).json({ error: 'Failed to process the uploaded file' });
     }
 }
+
+export async function filterTasks(req: Request, res: Response) {
+    const chats = await ChatHistory.findAll();
+
+    const filterByAll = chats.filter((chat) => chat.taskstatus === 'all');
+    const filterByPending = chats.filter((chat) => chat.taskstatus === 'pending');
+    const filterByCompleted = chats.filter((chat) => chat.taskstatus === 'completed');
+
+
+    return res.json({
+        all: filterByAll,
+        pending: filterByPending,
+        completed: filterByCompleted
+    });
+}
